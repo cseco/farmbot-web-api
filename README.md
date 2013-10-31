@@ -1,5 +1,6 @@
-Farmbot Backend Services
+Farmbot Web API
 ===
+RESTful JSON that runs the farm.
 
 Usage
 ===
@@ -21,4 +22,8 @@ This project uses Rspec for testing. It also uses PhantomJS for integration test
 Todo
 ===
  * One step installer / container.
- * User documentation
+ * API docs
+ * Codebase docs
+
+farmbot-web-api
+===============
