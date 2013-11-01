@@ -18,10 +18,6 @@ Capybara.register_driver :poltergeist do |app|
 end
 #=====
 
-
-require 'feature_helper'
-include FeatureHelper
-
 include Warden::Test::Helpers
 Warden.test_mode!
 
