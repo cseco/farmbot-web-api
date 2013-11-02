@@ -4,6 +4,8 @@ RESTful JSON that runs the farm.
 
 Usage
 ===
+![How Farmbot will work](diagram.png)
+
 You will need to CURL for now. Eventually, there will be a Farbot graphical frontend. API docs are on the way!
 
 Installation
