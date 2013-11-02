@@ -3,12 +3,21 @@ Farmbot Web API
 RESTful JSON that runs the farm.
 
 [![Build Status](https://travis-ci.org/farmbot/farmbot-web-api.png?branch=master)](https://travis-ci.org/farmbot/farmbot-web-api)
+[![Code Climate](https://codeclimate.com/github/FarmBot/farmbot-web-api.png)](https://codeclimate.com/github/FarmBot/farmbot-web-api)
 
 Usage
 ===
 ![How Farmbot will work](diagram.png)
 
-You will need to CURL for now. Eventually, there will be a Farbot graphical frontend. API docs are on the way!
+You will need to CURL for now. Eventually, there will be a Farmbot graphical frontend. API docs are on the way!
+
+Pre-install Dependencies
+===
+1. [Install MongoDB](http://docs.mongodb.org/manual/installation/)
+2. [Install Ruby 2.0](https://www.ruby-lang.org/en/downloads/)
+2. [Install Rails4](http://rubyonrails.org/download)
+
+We don't have a one step build yet. Sorry :(
 
 Installation
 ===
@@ -26,9 +35,6 @@ This project uses Rspec for testing. It also uses PhantomJS for integration test
 
 Todo
 ===
- * One step installer / container.
+ * One step installer / [docker container?](http://www.docker.io/learn_more/).
  * API docs
  * Codebase docs
-
-farmbot-web-api
-===============
