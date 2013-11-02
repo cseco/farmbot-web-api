@@ -2,12 +2,8 @@ Farmbot Web API
 ===
 RESTful JSON that runs the farm.
 
-<<<<<<< HEAD
-[![Build Status](https://travis-ci.org/farmbot/farmbot-web-api.png?branch=master)](https://travis-ci.org/farmbot/farmbot-web-api)
+[![Build Status](https://travis-ci.org/FarmBot/farmbot-web-api.png?branch=master)](https://travis-ci.org/farmbot/farmbot-web-api)
 [![Code Climate](https://codeclimate.com/github/FarmBot/farmbot-web-api.png)](https://codeclimate.com/github/FarmBot/farmbot-web-api)
-=======
-[![Build Status](https://travis-ci.org/FarmBot/farmbot-web-api.png?branch=master)](https://travis-ci.org/FarmBot/farmbot-web-api)
->>>>>>> case sensitivity!
 
 Usage
 ===
