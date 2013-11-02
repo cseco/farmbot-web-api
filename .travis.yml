@@ -1,0 +1,8 @@
+language: ruby
+rvm:
+  - 2.0.0
+services:
+  - mongodb
+notifications:
+  irc: "chat.freenode.net#farmbot"
+

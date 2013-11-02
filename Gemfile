@@ -51,6 +51,7 @@ group :test, :development do
   gem 'pry-nav'
   gem 'pry-rails'
   gem 'factory_girl_rails'
+  gem 'rake'
 end
 
 group :production do

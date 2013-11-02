@@ -2,6 +2,8 @@ Farmbot Web API
 ===
 RESTful JSON that runs the farm.
 
+[![Build Status](https://travis-ci.org/farmbot/farmbot-web-api.png?branch=master)](https://travis-ci.org/farmbot/farmbot-web-api)
+
 Usage
 ===
 ![How Farmbot will work](diagram.png)
