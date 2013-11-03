@@ -1,10 +1,9 @@
 language: ruby
 rvm:
-- 2.0.0
+  - 2.0.0
 services:
-- mongodb
+  - mongodb
 notifications:
   irc: chat.freenode.net#farmbot
 env:
-  global:
-    secure: S2sClb6hc9ZaAUrQPxAqIQqQSOqqUwCPpFsDXNbmbseng+nR5KpPSc37bTW8pf63oPDXCEkKRKu8BxZsDkfXslxoRXv9xqO8joWD5+lBrZABh/27yKhjHB0l0N2HbV1DJdn3f8Eh2PYvuU1+yUxuMnt0AyH2OVASlet257ID3s8=
+  - secure: Va+Qmr9EFJGUZb/madfFdOlh0K1yLqEaSPW9jGo3MXJZI0kkybP+ixEufD655ZUsY2pKbAci50JM8D50Cg0e/UYtZVMv/lt8wL/h1erpPZWzsGxKVcBcvgBZpq6NA7jCXlDxR7k8cvNRTLza3fNdZLHNOPYC4Svwp9+VjlYFH1w=
