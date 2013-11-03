@@ -33,4 +33,7 @@ Farmbot::Application.configure do
 
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
+
+  #Static secret key FOR TEST ONLY.
+  config.secret_key_base = ENV['SECRET_TOKEN']
 end

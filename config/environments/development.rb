@@ -24,4 +24,6 @@ Farmbot::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+
+  config.secret_key_base = ENV['SECRET_TOKEN']
 end
