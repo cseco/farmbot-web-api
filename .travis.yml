@@ -6,5 +6,5 @@ services:
 notifications:
   irc: "chat.freenode.net#farmbot"
 env:
-  - SECRET_TOKEN = 'a403d7fce30d7a23483b1a1ae756f0126502b9847ab25e675871bba0c2dad41c'
+  - SECRET_TOKEN=a403d7fce30d7a23483b1a1ae756f0126502b9847ab25e675871bba0c2dad41c
 
