@@ -7,4 +7,4 @@ notifications:
   irc: chat.freenode.net#farmbot
 env:
   global:
-    secure: S2sClb6hc9ZaAUrQPxAqIQqQSOqqUwCPpFsDXNbmbseng+nR5KpPSc37bTW8pf63oPDXCEkKRKu8BxZsDkfXslxoRXv9xqO8joWD5+lBrZABh/27yKhjHB0l0N2HbV1DJdn3f8Eh2PYvuU1+yUxuMnt0AyH2OVASlet257ID3s8=
+    - secure: S2sClb6hc9ZaAUrQPxAqIQqQSOqqUwCPpFsDXNbmbseng+nR5KpPSc37bTW8pf63oPDXCEkKRKu8BxZsDkfXslxoRXv9xqO8joWD5+lBrZABh/27yKhjHB0l0N2HbV1DJdn3f8Eh2PYvuU1+yUxuMnt0AyH2OVASlet257ID3s8=
