@@ -24,7 +24,7 @@ Installation
  1. Clone this repo
  2. In terminal, `cd` into this projects root directory
  3. Install MongoDB and run it via `mongod`
- 4. Set a secret token environment variable for the application (export SECRET_TOKEN=STRONG_CRYPTOGRAPHIC_HASH)
+ 4. Set a secret token environment variable for the application (`export SECRET_TOKEN=STRONG_CRYPTOGRAPHIC_HASH`)
  5. `bundle install`
  6. `rails s`
  7. Visit `http://localhost:3000`. You should see the server running now.
