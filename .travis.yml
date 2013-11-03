@@ -1,10 +1,10 @@
 language: ruby
 rvm:
-  - 2.0.0
+- 2.0.0
 services:
-  - mongodb
+- mongodb
 notifications:
-  irc: "chat.freenode.net#farmbot"
+  irc: chat.freenode.net#farmbot
 env:
-  - SECRET_TOKEN=a403d7fce30d7a23483b1a1ae756f0126502b9847ab25e675871bba0c2dad41c
-
+  global:
+    secure: S2sClb6hc9ZaAUrQPxAqIQqQSOqqUwCPpFsDXNbmbseng+nR5KpPSc37bTW8pf63oPDXCEkKRKu8BxZsDkfXslxoRXv9xqO8joWD5+lBrZABh/27yKhjHB0l0N2HbV1DJdn3f8Eh2PYvuU1+yUxuMnt0AyH2OVASlet257ID3s8=
