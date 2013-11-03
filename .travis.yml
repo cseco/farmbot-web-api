@@ -7,3 +7,4 @@ notifications:
   irc: chat.freenode.net#farmbot
 env:
   - secure: Va+Qmr9EFJGUZb/madfFdOlh0K1yLqEaSPW9jGo3MXJZI0kkybP+ixEufD655ZUsY2pKbAci50JM8D50Cg0e/UYtZVMv/lt8wL/h1erpPZWzsGxKVcBcvgBZpq6NA7jCXlDxR7k8cvNRTLza3fNdZLHNOPYC4Svwp9+VjlYFH1w=
+
