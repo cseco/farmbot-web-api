@@ -32,7 +32,7 @@ describe Api::V1::UsersController do
 
   describe "GET index" do
     it "assigns all api_v1_users as @api_v1_users" do
-      user = Api::V1::User.create! valid_attributes
+      user = User.create! valid_attributes
       get :index, {}, valid_session
       assigns(:api_v1_users).should eq([user])
     end
