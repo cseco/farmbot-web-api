@@ -1,5 +1,9 @@
 require 'spec_helper'
 
 describe User do
-  pending "add some examples to (or delete) #{__FILE__}"
+  let(:user){FactoryGirl.create(:user, email: 'test@test.com', password: 'password123')}
+  #TODO: Write rspec tests for expected values of User attributes.
+  it 'has an email' do
+    user.email.should eq('test@test.com')
+  end
 end

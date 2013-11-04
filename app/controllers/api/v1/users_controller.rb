@@ -10,6 +10,7 @@ class Api::V1::UsersController < ApplicationController
   # GET /api/v1/users/1
   # GET /api/v1/users/1.json
   def show
+    binding.pry
     @user = User.find(params[:id])
   end
 
