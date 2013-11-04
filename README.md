@@ -1,3 +1,4 @@
+![Farmbot Web API](logo.png)
 Farmbot Web API
 ===
 RESTful JSON that runs the farm.
@@ -29,6 +30,10 @@ Installation
  6. `rails s`
  7. Visit `http://localhost:3000`. You should see the server running now.
  8. *PLEASE* submit an issue here if the installation does not work for you. We can't fix the things we don't know about.
+
+How to Contribute
+===
+Pull requests welcome! Not sure where to start? We put all todo items for this repo in the issue tracker with a `todo: ` heading. If you clone the repo and run `rake notes` within the project, you may find other areas that are in need of refactoring.
 
 Testing and Development
 ===
