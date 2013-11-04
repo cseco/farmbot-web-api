@@ -23,7 +23,7 @@ describe Api::V1::UsersController do
   # This should return the minimal set of attributes required to create a valid
   # Api::V1::User. As you add validations to Api::V1::User, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) { {  } }
+  let(:valid_attributes) { { email: 'test@test.com', password: 'password123' } }
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
@@ -40,22 +40,15 @@ describe Api::V1::UsersController do
 
   describe "GET show" do
     it "assigns the requested api_v1 as @api_v1" do
-      user = Api::V1::User.create! valid_attributes
+      user = User.create! valid_attributes
       get :show, {:id => user.to_param}, valid_session
       assigns(:api_v1).should eq(user)
     end
   end
 
-  describe "GET new" do
-    it "assigns a new api_v1 as @api_v1" do
-      get :new, {}, valid_session
-      assigns(:api_v1).should be_a_new(Api::V1::User)
-    end
-  end
-
   describe "GET edit" do
     it "assigns the requested api_v1 as @api_v1" do
-      user = Api::V1::User.create! valid_attributes
+      user = User.create! valid_attributes
       get :edit, {:id => user.to_param}, valid_session
       assigns(:api_v1).should eq(user)
     end
@@ -66,7 +59,7 @@ describe Api::V1::UsersController do
       it "creates a new Api::V1::User" do
         expect {
           post :create, {:api_v1 => valid_attributes}, valid_session
-        }.to change(Api::V1::User, :count).by(1)
+        }.to change(User, :count).by(1)
       end
 
       it "assigns a newly created api_v1 as @api_v1" do
@@ -84,14 +77,14 @@ describe Api::V1::UsersController do
     describe "with invalid params" do
       it "assigns a newly created but unsaved api_v1 as @api_v1" do
         # Trigger the behavior that occurs when invalid params are submitted
-        Api::V1::User.any_instance.stub(:save).and_return(false)
+        User.any_instance.stub(:save).and_return(false)
         post :create, {:api_v1 => {  }}, valid_session
         assigns(:api_v1).should be_a_new(Api::V1::User)
       end
 
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
-        Api::V1::User.any_instance.stub(:save).and_return(false)
+        User.any_instance.stub(:save).and_return(false)
         post :create, {:api_v1 => {  }}, valid_session
         response.should render_template("new")
       end
@@ -101,23 +94,23 @@ describe Api::V1::UsersController do
   describe "PUT update" do
     describe "with valid params" do
       it "updates the requested api_v1" do
-        user = Api::V1::User.create! valid_attributes
+        user = User.create! valid_attributes
         # Assuming there are no other api_v1_users in the database, this
         # specifies that the Api::V1::User created on the previous line
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
-        Api::V1::User.any_instance.should_receive(:update).with({ "these" => "params" })
+        User.any_instance.should_receive(:update).with({ "these" => "params" })
         put :update, {:id => user.to_param, :api_v1 => { "these" => "params" }}, valid_session
       end
 
       it "assigns the requested api_v1 as @api_v1" do
-        user = Api::V1::User.create! valid_attributes
+        user = User.create! valid_attributes
         put :update, {:id => user.to_param, :api_v1 => valid_attributes}, valid_session
         assigns(:api_v1).should eq(user)
       end
 
       it "redirects to the api_v1" do
-        user = Api::V1::User.create! valid_attributes
+        user = User.create! valid_attributes
         put :update, {:id => user.to_param, :api_v1 => valid_attributes}, valid_session
         response.should redirect_to(user)
       end
@@ -125,17 +118,17 @@ describe Api::V1::UsersController do
 
     describe "with invalid params" do
       it "assigns the api_v1 as @api_v1" do
-        user = Api::V1::User.create! valid_attributes
+        user = User.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
-        Api::V1::User.any_instance.stub(:save).and_return(false)
+        User.any_instance.stub(:save).and_return(false)
         put :update, {:id => user.to_param, :api_v1 => {  }}, valid_session
         assigns(:api_v1).should eq(user)
       end
 
       it "re-renders the 'edit' template" do
-        user = Api::V1::User.create! valid_attributes
+        user = User.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
-        Api::V1::User.any_instance.stub(:save).and_return(false)
+        User.any_instance.stub(:save).and_return(false)
         put :update, {:id => user.to_param, :api_v1 => {  }}, valid_session
         response.should render_template("edit")
       end
@@ -144,14 +137,14 @@ describe Api::V1::UsersController do
 
   describe "DELETE destroy" do
     it "destroys the requested api_v1" do
-      user = Api::V1::User.create! valid_attributes
+      user = User.create! valid_attributes
       expect {
         delete :destroy, {:id => user.to_param}, valid_session
-      }.to change(Api::V1::User, :count).by(-1)
+      }.to change(User, :count).by(-1)
     end
 
     it "redirects to the api_v1_users list" do
-      user = Api::V1::User.create! valid_attributes
+      user = User.create! valid_attributes
       delete :destroy, {:id => user.to_param}, valid_session
       response.should redirect_to(api_v1_users_url)
     end
