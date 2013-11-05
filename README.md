@@ -44,3 +44,6 @@ Todo
  * One step installer / [docker container?](http://www.docker.io/learn_more/).
  * API docs
  * Codebase docs
+ * Spin up a Heroku / AWS instance
+ * Implement authorization via CanCan
+ * Make a default login for non-technical users after installation
