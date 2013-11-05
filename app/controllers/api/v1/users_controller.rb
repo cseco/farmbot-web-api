@@ -10,18 +10,27 @@ class Api::V1::UsersController < ApplicationController
   # GET /api/v1/users/1
   # GET /api/v1/users/1.json
   def show
-    binding.pry
     @user = User.find(params[:id])
   end
 
-  # POST /api/v1/users
-  # POST /api/v1/users.json
+  ##
+  # == POST /api/v1/users
+  # == POST /api/v1/users.json
+  #
+  # Authenticate the user and save
+  # [Required POST VARS]
+  #   email::
+  #   password::
+  # === Success
+  # [200] OK
+  # === Failure
+  # [420] User must be logged in
+  # [422] Invalid params
   def create
-    @user = User.new(api_v1_user_params)
-
+    @user = User.new(user_params)
     respond_to do |format|
       if @user.save
-        format.json { render action: 'show', status: :created, location: @user }
+        format.json { render action: 'show', status: :created }
       else
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
@@ -32,10 +41,10 @@ class Api::V1::UsersController < ApplicationController
   # PATCH/PUT /api/v1/users/1.json
   def update
     respond_to do |format|
-      if @user.update(api_v1_user_params)
-        format.json { head :no_content }
+      if @user.update_attributes(user_params)
+        format.json { head :no_content, status: 200}
       else
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        format.json { render json: @user.errors, status: :unprocessable_entity } #422
       end
     end
   end
@@ -56,7 +65,7 @@ class Api::V1::UsersController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def api_v1_user_params
-      params[:api_v1_user]
+    def user_params
+      params.permit(:email, :password)
     end
 end
