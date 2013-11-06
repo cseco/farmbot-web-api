@@ -3,9 +3,10 @@ Farmbot::Application.routes.draw do
   devise_for :users
 
   root :to => 'high_voltage/pages#show', id: 'home'
+
   namespace :api, defaults: {format: 'json'} do
     namespace :v1 do
-      resources :users, except: [:new, :edit]
+      resources :users, defaults: {format: "json"}, except: [:new, :edit]
     end
   end
 

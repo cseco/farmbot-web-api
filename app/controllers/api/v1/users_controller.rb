@@ -1,5 +1,5 @@
 class Api::V1::UsersController < ApplicationController
-  before_action :set_api_v1_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_api_v1_user, only: [:show, :update, :destroy]
 
   # GET /api/v1/users
   # GET /api/v1/users.json
@@ -10,7 +10,6 @@ class Api::V1::UsersController < ApplicationController
   # GET /api/v1/users/1
   # GET /api/v1/users/1.json
   def show
-    @user = User.find(params[:id])
   end
 
   ##
@@ -19,8 +18,8 @@ class Api::V1::UsersController < ApplicationController
   #
   # Authenticate the user and save
   # [Required POST VARS]
-  #   email::
-  #   password::
+  #   email::String
+  #   password::String
   # === Success
   # [200] OK
   # === Failure
@@ -28,24 +27,18 @@ class Api::V1::UsersController < ApplicationController
   # [422] Invalid params
   def create
     @user = User.new(user_params)
-    respond_to do |format|
-      if @user.save
-        format.json { render action: 'show', status: :created }
-      else
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
+    if @user.save
+      render action: 'show', status: :created
+    else
+      render json: @user.errors.to_json, status: :unprocessable_entity
     end
   end
 
   # PATCH/PUT /api/v1/users/1
   # PATCH/PUT /api/v1/users/1.json
   def update
-    respond_to do |format|
-      if @user.update_attributes(user_params)
-        format.json { head :no_content, status: 200}
-      else
-        format.json { render json: @user.errors, status: :unprocessable_entity } #422
-      end
+    if @user.update_attributes(user_params)
+      head :no_content, status: 200
     end
   end
 
@@ -53,15 +46,14 @@ class Api::V1::UsersController < ApplicationController
   # DELETE /api/v1/users/1.json
   def destroy
     @user.destroy
-    respond_to do |format|
-      format.json { head :no_content }
-    end
+    head :no_content
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_api_v1_user
       @user = User.find(params[:id])
+      render json: {error: 'document not found'}, status: 404 if @user.nil?
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
