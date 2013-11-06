@@ -42,31 +42,51 @@ describe 'Api::V1::Users' do
     end
 
     it 'returns 404 for missing records' do
-      pending
-      get api_v1_user_path('nope!')
+      get api_v1_user_path('nope')
       response.status.should eq(404)
     end
   end
 
   describe 'PUT /api/v1/users/:id' do
-
     it 'updates a User document' do
-      put api_v1_user_path user1, {id: user1.id.to_s, email: 'changed@changed.com', password: 'password123', format: :json}
+      put api_v1_user_path user1, {id: user1.id.to_s, email: 'changed@changed.com', password: 'password123'}
       response.status.should eq(204)
     end
 
-    it 'gives a 422 status for invalid params'
+    it 'returns unprocessable entity for malformed requests' do
+      post api_v1_users_path, {not: 'a', valid: 'request'}
+      return_value = JSON.parse(response.body)
+      response.status.should eq(422)
+    end
 
     it 'gives a 420 status for unauthorized requests'
   end
 
   describe 'POST /api/v1/users' do
     it 'creates a user' do
-      post api_v1_users_path, {format: :json, email: 'rick@rick.io', password: 'soopersecret'}
+      post api_v1_users_path, {email: 'rick@rick.io', password: 'soopersecret'}
       return_value = JSON.parse(response.body)
       return_value["email"].should eq('rick@rick.io')
       return_value["id"].should be
       response.status.should eq(201)
+    end
+
+    it 'returns unprocessable entity for malformed requests' do
+      post api_v1_users_path, {not: 'a', valid: 'request'}
+      return_value = JSON.parse(response.body)
+      response.status.should eq(422)
+    end
+  end
+
+  describe 'DELETE /api/v1/users/:id' do
+    it 'deletes a user' do
+      #OPTIMIZE: This test might not be thread safe. Might be an issue if we switch to parellel testing.
+      user1 #Because it gets lazy loaded, we need to load it now to get a count.
+      before = User.count
+      delete api_v1_user_path(user1)
+      after = User.count
+      response.status.should eq(204)
+      before.should be > after
     end
   end
 end
