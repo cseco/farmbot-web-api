@@ -10,7 +10,7 @@ Usage
 ===
 ![How Farmbot will work](diagram.png)
 
-You will need to CURL for now. Eventually, there will be a Farmbot graphical frontend. API docs are on the way!
+You will need to CURL for now. Eventually, there will be [a graphical frontend](https://github.com/FarmBot/farmbot-frontend). [API docs](https://github.com/FarmBot/farmbot-web-api/wiki) are on the way!
 
 Pre-install Dependencies
 ===
